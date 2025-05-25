@@ -32,6 +32,7 @@
     }
 
     .card {
+      position: relative;
       background: linear-gradient(145deg, #1a1a1a, #101010);
       border-radius: 16px;
       padding: 1.5rem;
@@ -41,13 +42,49 @@
       transition: transform 0.3s ease, box-shadow 0.3s ease;
       text-decoration: none;
       color: inherit;
-      display: block;
+      overflow: hidden;
+      height: 120px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
     .card:hover {
       transform: translateY(-8px) scale(1.03);
       box-shadow: 0 12px 25px rgba(0,0,0,0.6),
                   0 0 15px rgba(150,150,255,0.3);
+    }
+
+    .card-content, .card-hover {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      transition: opacity 0.4s ease;
+    }
+
+    .card-content {
+      opacity: 1;
+    }
+
+    .card-hover {
+      opacity: 0;
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: #a0a0ff;
+    }
+
+    .card:hover .card-content {
+      opacity: 0;
+    }
+
+    .card:hover .card-hover {
+      opacity: 1;
     }
 
     .subject {
@@ -67,40 +104,67 @@
   <h1>My IGCSE Syllabus Codes</h1>
   <div class="container">
     <a href="./Mathematics%20(Extended)/" class="card">
-      <div class="subject">Mathematics (Extended)</div>
-      <div class="code">0580</div>
+      <div class="card-content">
+        <div class="subject">Mathematics (Extended)</div>
+        <div class="code">0580</div>
+      </div>
+      <div class="card-hover">Resources</div>
     </a>
     <a href="./Physics/" class="card">
-      <div class="subject">Physics</div>
-      <div class="code">0625</div>
+      <div class="card-content">
+        <div class="subject">Physics</div>
+        <div class="code">0625</div>
+      </div>
+      <div class="card-hover">Resources</div>
     </a>
     <a href="./Chemistry/" class="card">
-      <div class="subject">Chemistry</div>
-      <div class="code">0620</div>
+      <div class="card-content">
+        <div class="subject">Chemistry</div>
+        <div class="code">0620</div>
+      </div>
+      <div class="card-hover">Resources</div>
     </a>
     <a href="./Biology/" class="card">
-      <div class="subject">Biology</div>
-      <div class="code">0610</div>
+      <div class="card-content">
+        <div class="subject">Biology</div>
+        <div class="code">0610</div>
+      </div>
+      <div class="card-hover">Resources</div>
     </a>
     <a href="./Computer%20Science/" class="card">
-      <div class="subject">Computer Science</div>
-      <div class="code">0478</div>
+      <div class="card-content">
+        <div class="subject">Computer Science</div>
+        <div class="code">0478</div>
+      </div>
+      <div class="card-hover">Resources</div>
     </a>
     <a href="./Language/" class="card">
-      <div class="subject">First Language English</div>
-      <div class="code">0500</div>
+      <div class="card-content">
+        <div class="subject">First Language English</div>
+        <div class="code">0500</div>
+      </div>
+      <div class="card-hover">Resources</div>
     </a>
     <a href="./Literature/" class="card">
-      <div class="subject">Literature</div>
-      <div class="code">0475</div>
+      <div class="card-content">
+        <div class="subject">Literature</div>
+        <div class="code">0475</div>
+      </div>
+      <div class="card-hover">Resources</div>
     </a>
     <a href="./French/" class="card">
-      <div class="subject">French</div>
-      <div class="code">0520</div>
+      <div class="card-content">
+        <div class="subject">French</div>
+        <div class="code">0520</div>
+      </div>
+      <div class="card-hover">Resources</div>
     </a>
     <a href="./Additional%20Mathematics/" class="card">
-      <div class="subject">Additional Mathematics</div>
-      <div class="code">0606</div>
+      <div class="card-content">
+        <div class="subject">Additional Mathematics</div>
+        <div class="code">0606</div>
+      </div>
+      <div class="card-hover">Resources</div>
     </a>
   </div>
 </body>
